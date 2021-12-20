@@ -9,7 +9,10 @@
           />
         </v-avatar>
 
-        <v-btn v-for="link in links" :key="link" text>{{ link }}</v-btn>
+        <v-btn text>BookStore</v-btn>
+        <v-btn text>|</v-btn>
+        <v-btn text :to="{name: 'Home'}">Livros</v-btn>
+        <v-btn text :to="{name: 'Autor'}">Autores</v-btn>
 
         <v-spacer></v-spacer>
 
@@ -53,15 +56,16 @@
                   </v-list-item-content>
                 </v-list-item>
               </v-list>-->
-              <v-card class="mx-auto" color="#26c6da" dark max-width="400">
-                <v-card-title>
+              <v-card class="mx-auto" color="error" dark max-width="400">
+                <!-- <v-card-title>
                   <v-icon large left>mdi-twitter</v-icon>
                   <span class="text-h6 font-weight-light">Twitter</span>
-                </v-card-title>
+                </v-card-title> -->
 
-                <v-card-text
-                  class="text-h5 font-weight-bold"
-                >"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."</v-card-text>
+                <v-card-text class="text-h5 font-weight-bold">
+                  “A gente pensa uma coisa, acaba escrevendo outra e o leitor entende uma terceira coisa.
+                  E enquanto se passa tudo isso, a coisa propriamente dita começa a desconfiar que não foi propriamente dita”.
+                </v-card-text>
 
                 <v-card-actions>
                   <v-list-item class="grow">
@@ -74,12 +78,8 @@
                     </v-list-item-avatar>
 
                     <v-list-item-content>
-                      <v-list-item-title>Evan You</v-list-item-title>
+                      <v-list-item-title>Mário Quintana</v-list-item-title>
                     </v-list-item-content>
-
-                    <v-row align="center" justify="end">
-                      <v-icon class="mr-1">mdi-heart</v-icon>
-                    </v-row>
                   </v-list-item>
                 </v-card-actions>
               </v-card>
@@ -127,7 +127,7 @@
                           </v-container>
                         </v-card-text>
                         <v-card-actions>
-                          <v-spacer></v-spacer> 
+                          <v-spacer></v-spacer>
                           <v-btn color="error" dark @click="dialog = false">Cancelar</v-btn>
                           <v-btn color="#0E335F" dark @click="dialog = false">Salvar</v-btn>
                         </v-card-actions>
@@ -139,6 +139,7 @@
             </v-row>
             <hr />
             <v-sheet min-height="70vh" rounded="lg">
+              <h2 class="pa-2">Lista de Livros</h2>
               <v-simple-table>
                 <template v-slot:default>
                   <thead>
@@ -172,6 +173,13 @@
           </v-col>
         </v-row>
       </v-container>
+
+      <v-footer padless>
+        <v-col class="text-center" cols="12">
+          {{ new Date().getFullYear() }} —
+          <strong>Designed by Marino Ricardo</strong>
+        </v-col>
+      </v-footer>
     </v-main>
   </v-app>
 </template>
