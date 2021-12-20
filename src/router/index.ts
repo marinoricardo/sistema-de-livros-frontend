@@ -1,3 +1,5 @@
+import HelloWorldVue from '@/components/HelloWorld.vue'
+import AutorVue from '@/views/Autor.vue'
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
@@ -9,6 +11,16 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/livros',
+    name: 'Livro',
+    component: HelloWorldVue
+  },
+  {
+    path: '/autores',
+    name: 'Autor',
+    component: AutorVue
   },
   {
     path: '/about',
